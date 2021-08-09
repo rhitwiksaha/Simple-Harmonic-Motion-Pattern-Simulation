@@ -28,9 +28,9 @@ function draw() {
       push();
       let distance = dist(x, z, boxWidth / 2, boxHeight / 2);
       let offset = map(distance, 0, maxDistance, -PI, PI);
-      // let h = floor(map(sin(angle + offset), -1, 1, 100, boxLength));
+      let h = floor(map(sin(angle + offset), -1, 1, 100, boxLength));
       translate(x - boxWidth / 2, 0, z - boxHeight / 2);
-      box(w, boxLength, w);
+      box(w, h, w);
       pop();
     }
   }
