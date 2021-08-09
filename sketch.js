@@ -22,8 +22,9 @@ function draw() {
   rotateX(PI/3);
   rotateY(frameCount * 0.005);
 
-  for (let z = 0; z < boxHeight; z += w) {
-    for (let x = 0; x < boxWidth; x += w) {
+  let offset = 0;
+  for (let z = 0; z < boxHeight; z += eachWidth) {
+    for (let x = 0; x < boxWidth; x += eachWidth) {
       push();
       let distance = dist(x, z, boxWidth / 2, boxHeight / 2);
       let offset = map(distance, 0, maxDistance, -PI, PI);
