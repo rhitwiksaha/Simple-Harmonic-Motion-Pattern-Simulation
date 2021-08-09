@@ -1,5 +1,5 @@
 let angle = 0;
-let w = 28;
+let eachWidth = 28;
 let rotationX;
 let maxDistance;
 let boxHeight = 280;
@@ -22,15 +22,14 @@ function draw() {
   rotateX(PI/3);
   rotateY(frameCount * 0.005);
 
-  let offset = 0;
   for (let z = 0; z < boxHeight; z += w) {
     for (let x = 0; x < boxWidth; x += w) {
       push();
       let distance = dist(x, z, boxWidth / 2, boxHeight / 2);
       let offset = map(distance, 0, maxDistance, -PI, PI);
-      let h = floor(map(sin(angle + offset), -1, 1, 100, boxLength));
+      let eachHeight = floor(map(sin(angle + offset), -1, 1, 100, boxLength));
       translate(x - boxWidth / 2, 0, z - boxHeight / 2);
-      box(w, h, w);
+      box(eachWidth, eachHeight, eachWidth);
       pop();
     }
   }
